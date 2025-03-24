@@ -1,5 +1,7 @@
 package com.Rishabh.ExpenseTracker.services.expense;
 
+import com.Rishabh.ExpenseTracker.entity.Expense;
+import com.Rishabh.ExpenseTracker.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,4 +10,16 @@ import org.springframework.stereotype.Service;
 
 
 public class ExpenseServiceImp implements ExpenseService {
+
+    private final ExpenseRepository expenseRepository; // This is a final variable of type ExpenseReposiotry.
+
+    public ExpenseServiceImp(ExpenseRepository expenseRepository) {
+        this.expenseRepository = expenseRepository;
+    }
+
+    private Expense saveOrUpdate (Expense expense , ExpenseDTO expenseDTO){
+        expense.setTitle(expenseDTO.getTitle());
+
+    }
+
 }
