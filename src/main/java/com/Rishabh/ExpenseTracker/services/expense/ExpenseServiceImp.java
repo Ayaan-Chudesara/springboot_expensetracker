@@ -3,8 +3,14 @@ package com.Rishabh.ExpenseTracker.services.expense;
 import com.Rishabh.ExpenseTracker.dto.ExpenseDTO;
 import com.Rishabh.ExpenseTracker.entity.Expense;
 import com.Rishabh.ExpenseTracker.repository.ExpenseRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service // This annotation is used to indicate that the class is a service class.
 @RequiredArgsConstructor // This annotation is used to generate a constructor with required arguments.
@@ -30,4 +36,18 @@ public class ExpenseServiceImp implements ExpenseService {
         return expenseRepository.save(expense);
     }
 
+    public List<Expense> getAllExpenses(){
+        return expenseRepository.findAll().stream()
+                .sorted(Comparator.comparing(Expense::getDate).reversed())
+                .collect(Collectors.toList());
+    }
+
+    public Expense getExpenseById(Long id){
+        Optional<Expense> optionalExpense = expenseRepository.findById(id);
+        if(optionalExpense.isPresent()){
+            return optionalExpense.get();
+        }else {
+            throw new EntityNotFoundException("Expense not found with id:"+id);
+        }
+    }
 }
