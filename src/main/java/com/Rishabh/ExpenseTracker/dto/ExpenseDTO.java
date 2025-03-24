@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class ExpenseDTO {
 
-    private long id;
+    private Long id;
 
     private String title;
 
@@ -19,7 +19,6 @@ public class ExpenseDTO {
     private LocalDate date;
 
     private Integer amount;
-
 
 
 }
