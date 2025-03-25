@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class Income {
 
     private String description;
 
-    public void getIncomeDTO(){
+    public IncomeDTO getIncomeDTO(){
 
         IncomeDTO incomeDTO = new IncomeDTO();
 
@@ -37,6 +38,8 @@ public class Income {
         incomeDTO.setCategory(category);
         incomeDTO.setDescription(description);
         incomeDTO.setDate(date);
+
+     return incomeDTO;
     }
 
 
