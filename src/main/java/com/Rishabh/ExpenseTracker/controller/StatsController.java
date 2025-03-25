@@ -1,5 +1,6 @@
 package com.Rishabh.ExpenseTracker.controller;
 
+import com.Rishabh.ExpenseTracker.dto.GraphDTO;
 import com.Rishabh.ExpenseTracker.services.stats.StatsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,12 @@ public class StatsController {
  private final StatsService statsService;
 
  @GetMapping("/chart")
- public ResponseEntity<?> getChartDetails(){
+ public ResponseEntity<GraphDTO> getChartDetails(){
      return ResponseEntity.ok(statsService.getChartData());
+ }
+
+ @GetMapping
+ public ResponseEntity<?> getStats(){
+     return ResponseEntity.ok(statsService.getStats());
  }
 }
