@@ -1,112 +1,135 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-// NG-ZORRO Imports
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzTableModule } from 'ng-zorro-antd/table';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzAffixModule } from 'ng-zorro-antd/affix';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip'; // ✅ Correct spelling
-import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzProgressModule } from 'ng-zorro-antd/progress';
-import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzCascaderModule } from 'ng-zorro-antd/cascader';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NzRadioModule } from 'ng-zorro-antd/radio';
-import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
-import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzMentionModule } from 'ng-zorro-antd/mention';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NzResultModule } from 'ng-zorro-antd/result';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTransferModule } from 'ng-zorro-antd/transfer';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
-import { NzStepsModule } from 'ng-zorro-antd/steps';
-import { NzAnchorModule } from 'ng-zorro-antd/anchor';
-import { NzCascaderModule } from 'ng-zorro-antd/cascader';
-import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NzDrawerModule } from 'ng-zorro-antd/drawer';
-import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { NzStatisticModule } from 'ng-zorro-antd/statistic';
-import { NzAffixModule } from 'ng-zorro-antd/affix';
-import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
-import { NzSpaceModule } from 'ng-zorro-antd/space';
-import { NzResizableModule } from 'ng-zorro-antd/resizable';
-import { NzImageModule } from 'ng-zorro-antd/image';
-import { NzQRCodeModule } from 'ng-zorro-antd/qr-code'; // Ensure this module exists in the library
-// import { NzColorPickerModule } from 'ng-zorro-antd/color-picker';
-import { AppComponent } from './app.component';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 
 @NgModule({
-  imports: [
-    BrowserModule,
+
+  exports: [
     FormsModule,
     ReactiveFormsModule,
-
-    // NG-ZORRO Modules
-    NzButtonModule,
-    NzTableModule,
-    NzInputModule,
-    NzIconModule,
-    NzGridModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzModalModule,
-    NzFormModule,
-    NzSelectModule,
-    NzCardModule,
+    NzAffixModule,
+    NzAlertModule,
+    NzAnchorModule,
+    NzAutocompleteModule,
     NzAvatarModule,
-    NzDropDownModule,
+    NzBackTopModule,
     NzBadgeModule,
-    NzSpinModule,
-    NzSwitchModule,
-    NzToolTipModule, // ✅ Correct spelling
-    NzPopoverModule,
-    NzCollapseModule,
-    NzPaginationModule,
-    NzDividerModule,
-    NzProgressModule,
-    NzTabsModule,
     NzBreadCrumbModule,
+    NzButtonModule,
+    NzCalendarModule,
+    NzCardModule,
+    NzCarouselModule,
+    NzCascaderModule,
     NzCheckboxModule,
-    NzRadioModule,
-    NzSliderModule,
+    NzCollapseModule,
+    NzCommentModule,
     NzDatePickerModule,
-    NzTimePickerModule,
-    NzUploadModule,
+    NzDescriptionsModule,
+    NzDividerModule,
+    NzDrawerModule,
+    NzDropDownModule,
+    NzEmptyModule,
+    NzFormModule,
+    NzGridModule,
+    NzIconModule,
+    NzInputModule,
+    NzInputNumberModule,
+    NzLayoutModule,
+    NzListModule,
+    NzMentionModule,
+    NzMenuModule,
+    NzMessageModule,
+    NzModalModule,
+    NzNotificationModule,
+    NzPageHeaderModule,
+    NzPaginationModule,
+    NzPopconfirmModule,
+    NzPopoverModule,
+    NzProgressModule,
+    NzRadioModule,
+    NzRateModule,
     NzResultModule,
+    NzSelectModule,
+    NzSkeletonModule,
+    NzSliderModule,
+    NzSpinModule,
+    NzStatisticModule,
+    NzStepsModule,
+    NzSwitchModule,
+    NzTableModule,
+    NzTabsModule,
+    NzTagModule,
+    NzTimePickerModule,
+    NzTimelineModule,
+    NzToolTipModule,
+    NzTransferModule,
     NzTreeModule,
     NzTreeSelectModule,
-    NzStepsModule,
-    NzAnchorModule,
-    NzCascaderModule,
-    NzAlertModule,
-    NzDrawerModule,
-    NzSkeletonModule,
-    NzStatisticModule,
-    NzAffixModule,
-    NzSegmentedModule,
-    NzSpaceModule,
-    NzResizableModule,
-    NzImageModule,
-    NzQRCodeModule, // ✅ Correct spelling
-    // NzColorPickerModule
+    NzTypographyModule,
+    NzUploadModule,
+    NzWaveModule,
+    
   ],
-  bootstrap: [AppComponent],
 })
 export class DemoNgZorroAntdModule {}
