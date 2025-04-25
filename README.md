@@ -24,9 +24,10 @@ the backend components consists of,
  authentication (JWT-based), input validation, and error handling are implemented to deliver a secure and stable backend.
 
 
+
 --> How to Run the Project:
  - move to project folder using  cd path/to/your/project
- - git clone https://github.com/your-username/springboot_expensetracker.git
+ - git clone https://github.com/Ayaan-Chudesara/springboot_expensetracker.git
  - open the back-end springboot application in intellij / vscode (intellij preferred)
  - create a database named expense_tracker in mysql workbench
  - open the frontend folder in vscode
